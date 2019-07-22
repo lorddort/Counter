@@ -19,5 +19,18 @@ public class Deck {
 	public void counter() {
 		
 	}
-
+	
+	/**
+	 * save the current deck
+	 */
+	public void saveDeck() {
+		
+	}
+	
+	/**
+	 * load a existing deck
+	 */
+	public void loadDeck() {
+		
+	}
 }

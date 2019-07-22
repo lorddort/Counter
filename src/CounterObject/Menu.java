@@ -12,7 +12,7 @@ public class Menu {
 	/**
 	 * User chose an Option
 	 */
-	public void choseOptions() {
+	public void chooseOptions() {
 		
 	}
 }
