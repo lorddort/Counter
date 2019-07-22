@@ -9,5 +9,5 @@ public enum Heroes {
 	PRIESTER,
 	DRUIDE,
 	ROGUE,
-	HUNTER
-};
+	HUNTER;
+}
