@@ -5,6 +5,7 @@ public class Deck {
 	String deckName;
 	Heroes heroes;	
 	int wins, loses;
+	boolean currentGameOutcome;
 	
 	public Deck(String deckName, Heroes heroes, int wins, int loses) {
 		this.deckName = deckName;
@@ -16,8 +17,12 @@ public class Deck {
 	/**
 	 * Count wins/loses of the deck
 	 */
-	public void counter() {
-		
+	public void counter(boolean currentGameOutcome) {
+		if(currentGameOutcome == true) {
+			wins++;
+		} else if(currentGameOutcome == false){
+			loses++;
+		}
 	}
 	
 	/**
@@ -32,5 +37,9 @@ public class Deck {
 	 */
 	public void loadDeck() {
 		
+	}
+	
+	public void showDeckInformation() {
+		System.out.println(deckName + ", " + heroes + ", " + wins + ", " + loses);
 	}
 }
