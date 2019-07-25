@@ -7,7 +7,7 @@ public class Menu {
 	Options choosenOption;
 	
 	/**
-	 * show Main Menu
+	 * show Menu
 	 */
 	public void showOptions() {
 		System.out.println("Choose an option:");
@@ -42,6 +42,9 @@ public class Menu {
 		System.out.println(Options.NEW.toString() + "\n" + Options.LOAD.toString() + "\n" + Options.EXIT.toString());
 	}
 	
+	/**
+	 * List all options for menu2
+	 */
 	public void menu2Options() {
 		
 	}

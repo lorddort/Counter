@@ -55,6 +55,9 @@ public class Deck {
 		
 	}
 	
+	/**
+	 * show important information about the current deck
+	 */
 	public void showDeckInformation() {
 		System.out.println(deckName + ", " + heroes + ", " + wins + ", " + loses);
 	}

@@ -11,6 +11,11 @@ public enum Heroes {
 	ROGUE,
 	HUNTER;
 	
+	/**
+	 * Get hero form Enum
+	 * @param heroInString
+	 * @return
+	 */
 	public static Heroes getHero(String heroInString) {
 		Heroes heroInHeroes = null;
 		for(Heroes hero: Heroes.values()) {
