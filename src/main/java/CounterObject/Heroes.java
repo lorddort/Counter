@@ -1,4 +1,4 @@
-package CounterObject;
+package main.java.CounterObject;
 
 public enum Heroes {
 	WARRIOR,
