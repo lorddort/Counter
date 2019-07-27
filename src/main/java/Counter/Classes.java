@@ -1,6 +1,6 @@
-package main.java.CounterObject;
+package main.java.Counter;
 
-public enum Heroes {
+public enum Classes {
 	WARRIOR,
 	PALADIN,
 	WARLOCK,
@@ -16,7 +16,7 @@ public enum Heroes {
 	 * @param heroInString
 	 * @return
 	 */
-	public static Heroes getHero(String heroInString) {
+	/*public static Heroes getHero(String heroInString) {
 		Heroes heroInHeroes = null;
 		for(Heroes hero: Heroes.values()) {
 			if(heroInString.matches(hero.name())) {
@@ -24,5 +24,5 @@ public enum Heroes {
 			}
 		}
 		return heroInHeroes;
-	}
+	}*/
 }
