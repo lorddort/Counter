@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Test;
 
 class CommandsTest {
 	Commands command;
+	Deck deck;
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -23,7 +24,7 @@ class CommandsTest {
 		InputStream in = new ByteArrayInputStream(read.getBytes());
 		System.setIn(in);
 		
-		assertEquals(Commands.NEW, Commands.chooseCommand());
+		assertEquals(Commands.NEW, Commands.chooseCommand(deck));
 	}
 	
 	@AfterEach

@@ -6,7 +6,7 @@ public enum Commands {
 	NEW{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			deck.create();
 		}
 	},
 	LOAD{
@@ -49,10 +49,11 @@ public enum Commands {
 	};
 	
 	private static Menu menu = new Menu();
+	private static Deck deck = new Deck();
 	private static Scanner userInput = new Scanner(System.in);
 	private static boolean RUNNING = true;
 	
-	public static Commands chooseCommand() throws Exception{
+	public static Commands chooseCommand(Deck deck) throws Exception{
 		menu.showMenu();
 		String input = userInput.nextLine();
 		for(Commands command:Commands.values()) {

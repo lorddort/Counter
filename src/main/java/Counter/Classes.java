@@ -16,13 +16,13 @@ public enum Classes {
 	 * @param heroInString
 	 * @return
 	 */
-	/*public static Heroes getHero(String heroInString) {
-		Heroes heroInHeroes = null;
-		for(Heroes hero: Heroes.values()) {
-			if(heroInString.matches(hero.name())) {
-				heroInHeroes = Heroes.valueOf(heroInString.toUpperCase());
+	public static Classes getClass(String classInString) {
+		Classes classInHeroes = null;
+		for(Classes classes: Classes.values()) {
+			if(classInString.toUpperCase().matches(classes.name())) {
+				classInHeroes = Classes.valueOf(classInString.toUpperCase());
 			}
 		}
-		return heroInHeroes;
-	}*/
+		return classInHeroes;
+	}
 }
