@@ -21,11 +21,7 @@ public class Save {
 	}
 	
 	public void saveDeck() throws Exception {
-		String direction = "/Users/lorddort/Desktop/eclipse-workspace/Counter/main/resources/test.txt";
-		File existFile = new File(direction);
-		if(!(existFile.exists())) {
-			Formatter newFile = new Formatter(direction);
-		}
+		String direction = "src/main/resources/test.txt";
 		FileWriter file = new FileWriter(direction);
 		BufferedWriter writer = new BufferedWriter(file);
 		writer.write(deckName + ", " + classes + ", " + Integer.toString(wins) + ", " + Integer.toString(loses));

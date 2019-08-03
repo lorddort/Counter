@@ -57,7 +57,7 @@ public enum Commands {
 		menu.showMenu();
 		String input = userInput.nextLine();
 		for(Commands command:Commands.values()) {
-			if(input.matches(command.name().toLowerCase())) {
+			if(input.toUpperCase().matches(command.name())) {
 				command.execute();
 				return command;
 			}
