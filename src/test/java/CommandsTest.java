@@ -22,16 +22,11 @@ class CommandsTest {
 	}
 	
 	@Test
-	void test() throws Exception {
+	void chooseCommandTest() throws Exception {
 		String read = "new";
-		//String read2 = "hunter";
-		//String read3 = "bla";
 		InputStream in = new ByteArrayInputStream(read.getBytes());
-		//InputStream in2 = new ByteArrayInputStream(read2.getBytes());
-		//InputStream in3 = new ByteArrayInputStream(read3.getBytes());
 		System.setIn(in);
-		//System.setIn(in2);
-		//System.setIn(in3);
+		
 		assertEquals(Commands.NEW, Commands.chooseCommand(deck));
 	}
 	

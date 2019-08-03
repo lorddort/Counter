@@ -1,17 +1,26 @@
 package main.java.Counter.Options;
 
+import java.io.File;
+import java.util.Scanner;
+
 import main.java.Counter.Classes;
 
 public class Load {
 	String deckName;
 	Classes classes;
-	int wins;
-	int loses;
+	Scanner scanTxt;
 	
-	public Load(String deckName, Classes classes, int wins, int loses) {
+	public Load(String deckName, Classes classes) {
 		this.deckName = deckName;
 		this.classes = classes;
-		this.wins = wins;
-		this.loses = loses;
+	}
+	
+	public void load() throws Exception{
+		File file = new File("src/main/resources/test.txt");
+		scanTxt = new Scanner(file);
+		
+		if(scanTxt.hasNextLine()) {
+			String searchingName = scanTxt.
+		}
 	}
 }
