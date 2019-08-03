@@ -21,12 +21,14 @@ public class Save {
 	}
 	
 	public void saveDeck() throws Exception {
-		String direction = "src/main/resources/test.txt";
-		FileWriter file = new FileWriter(direction);
-		BufferedWriter writer = new BufferedWriter(file);
-		writer.write(deckName + ", " + classes + ", " + Integer.toString(wins) + ", " + Integer.toString(loses));
-		writer.newLine();
+		FileWriter writer;
+		File file;
 		
+		file = new File("src/main/resources/test.txt");
+		writer = new FileWriter(file, true);
+		writer.write(deckName + ", " + classes + ", " + Integer.toString(wins) + ", " + Integer.toString(loses));
+		writer.write(System.getProperty("line.separator"));
+		writer.flush();
 		writer.close();
 	}
 }
