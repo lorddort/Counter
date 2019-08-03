@@ -9,15 +9,16 @@ public class Deck {
 	ArrayList<String[]> currentList = new ArrayList<>();
 	String[] deckInfo = new String[4];
 	Scanner user = new Scanner(System.in);
-	Classes classes;
 	New newDeck;
+	Save newSave;
+	Classes classes;
 	int wins;
 	int loses;
 	
 	public void create() {
 		System.out.println("Please insert class");
 		String hero = user.nextLine();
-		Classes classes = Classes.getClass(hero);
+		classes = Classes.getClass(hero);
 		System.out.println("Please insert name for your deck.");
 		String deckName = user.nextLine();
 		wins = 0;
@@ -32,7 +33,17 @@ public class Deck {
 	}
 	
 	public void save() {
+		deckInfo = currentList.get(currentList.size()- 1);
+		int winsTemp = Integer.parseInt(deckInfo[2]);
+		int losesTemp = Integer.parseInt(deckInfo[3]);
+		classes = Classes.getClass(deckInfo[1]);
+		newSave = new Save(deckInfo[0], classes, winsTemp, losesTemp);
 		
+		try {
+			newSave.saveDeck();
+		} catch (Exception e) {
+			System.err.println("I GOT TO CATCH THE EXPECTION");
+		}
 	}
 	
 	public void delete() {

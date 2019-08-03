@@ -26,7 +26,7 @@ public enum Commands {
 	SAVE{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			deck.save();
 		}
 	},
 	DELETE{
