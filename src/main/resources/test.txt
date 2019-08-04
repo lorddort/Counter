@@ -2,3 +2,5 @@ bla, HUNTER, 0, 0
 bla3, HUNTER, 0, 0
 bomb, HUNTER, 0, 0
 kk, MAGE, 0, 0
+bla, HUNTER, 0, 0
+piss, MAGE, 0, 0

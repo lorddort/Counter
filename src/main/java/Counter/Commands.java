@@ -12,7 +12,7 @@ public enum Commands {
 	LOAD{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			deck.load();
 		}
 	},
 	EXIT{
