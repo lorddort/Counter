@@ -32,7 +32,7 @@ public enum Commands {
 	DELETE{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			deck.delete();
 		}
 	},
 	EDIT{

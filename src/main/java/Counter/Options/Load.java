@@ -3,6 +3,7 @@ package main.java.Counter.Options;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 import main.java.Counter.Classes;
@@ -19,6 +20,7 @@ public class Load {
 	
 	public void load() throws Exception{
 		String direction = "src/main/resources/test.txt";
+		
 		File file = new File(direction);
 		if (!file.canRead() || !file.isFile()) {
 			throw new Exception();
