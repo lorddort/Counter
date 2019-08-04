@@ -18,27 +18,35 @@ public class Delete {
 		this.classes = classes;
 	}
 	
-	public void delete(String fileName) throws Exception{
-		String direction = "src/main/resources/" + fileName + ".txt";
+	public void delete() throws Exception{
+		String direction = "src/main/resources/test.txt";
 		FileWriter writer;
+		String[] deckInfo;
 		
 		File file = new File(direction);
 		if (!file.canRead() || !file.isFile()) {
 			throw new Exception();
 		}
+		
 		BufferedReader read = new BufferedReader(new FileReader(file)); 
         String line; 
         while ((line = read.readLine()) != null) { 
-        	String[] deckInfo = line.split(", ");
+        	deckInfo = line.split(", ");
         	if(!(deckInfo[0].matches(deckName) && deckInfo[1].toUpperCase().matches(classes.name()))) {
                 listTmp.add(deckInfo);
         	}
-        	writer = new FileWriter(file, true);
-    		writer.write(deckInfo[0] + ", " + deckInfo[1] + ", " + deckInfo[2] + ", " + deckInfo[3]);
+        }
+        
+    	file.delete();
+    	writer = new FileWriter(file, true);
+    	
+    	for(int i= 0; i < listTmp.size(); i++) {
+    		String[] newDeckInfo = listTmp.get(i);
+    		writer.write(newDeckInfo[0] + ", " + newDeckInfo[1] + ", " + newDeckInfo[2] + ", " + newDeckInfo[3]);
     		writer.write(System.getProperty("line.separator"));
             writer.flush();
-            writer.close();
-        }
+    	}
+        writer.close();
         read.close();
         
         

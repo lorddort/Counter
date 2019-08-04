@@ -62,12 +62,10 @@ public class Deck {
 		classes = Classes.getClass(hero);
 		System.out.println("Please insert deleting deckname");
 		String deckName = user.nextLine();
-		System.out.println("Please name the file");
-		String fileName = user.nextLine();
 		Delete delete = new Delete(deckName, classes);
 		
 		try {
-			delete.delete(fileName);
+			delete.delete();
 		} catch(Exception e) {
 			System.err.println("I GOT TO CATCH THAT EXCEPTION");
 		}
