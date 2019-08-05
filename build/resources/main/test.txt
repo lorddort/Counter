@@ -1,0 +1,3 @@
+blsd, HUNTER, 0, 0
+bla, MAGE, 0, 0
+kk, HUNTER, 0, 0

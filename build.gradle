@@ -1,5 +1,25 @@
-apply plugin: "java"
+repositories{
+	mavenCentral()
+}
+
+apply plugin: 'java'
+
+dependencies{
+	testCompile group: 'junit', name: 'junit', version: '4.12'
+}
 
 sourceSets {
-	main.java.srcDir "src/main"
+	main.java.srcDir 'src/main'
+	test.java.srcDir 'src/test'
+}
+
+jar{
+	manifest.attributes 'Main-Class': 'main.java.Counter.Main'
+}
+
+task run(type: JavaExec, dependsOn: classes){
+	onlyIf { false }
+	main 'main.java.Counter.Main'
+	classpath sourceSets.main.runtimeClasspath
+
 }
