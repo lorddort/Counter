@@ -72,6 +72,10 @@ public class Deck {
 	}
 	
 	public void edit() {
+		System.out.println("Please insert the new deckname");
+		String editName = user.nextLine();
+		Edit edit = new Edit(currentDeckInfo[0]);
 		
+		currentDeckInfo[0] = edit.edit(editName);
 	}
 }

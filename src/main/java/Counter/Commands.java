@@ -27,6 +27,7 @@ public enum Commands {
 		@Override
 		public void execute() {
 			deck.save();
+			menu.setShowMenu(2);
 		}
 	},
 	DELETE{
@@ -39,12 +40,13 @@ public enum Commands {
 		@Override
 		public void execute() {
 			deck.edit();
+			menu.setShowMenu(2);
 		}
 	},
 	RETURN{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			menu.setShowMenu(1);
 		}
 	};
 	

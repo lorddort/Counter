@@ -8,10 +8,12 @@ public class Edit {
 	int wins;
 	int loses;
 	
-	public Edit(String deckName, Classes classes, int wins, int loses) {
+	public Edit(String deckName) {
 		this.deckName = deckName;
-		this.classes = classes;
-		this.wins = wins;
-		this.loses = loses;
+	}
+	
+	public String edit(String editName) {
+		deckName = editName;
+		return deckName;
 	}
 }
