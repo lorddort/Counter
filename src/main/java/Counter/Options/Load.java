@@ -18,8 +18,9 @@ public class Load {
 		this.classes = classes;
 	}
 	
-	public void load() throws Exception{
+	public String[] load() throws Exception{
 		String direction = "src/main/resources/test.txt";
+		String[] returnArray;
 		
 		File file = new File(direction);
 		if (!file.canRead() || !file.isFile()) {
@@ -30,9 +31,13 @@ public class Load {
         while ((line = read.readLine()) != null) { 
         	String[] deckInfo = line.split(", ");
         	if(deckInfo[0].matches(deckName) && deckInfo[1].toUpperCase().matches(classes.name())) {
-                System.out.println(line); 
+                System.out.println(line);
+                returnArray = deckInfo;
+                read.close();
+                return returnArray;
         	}
         }
         read.close();
+        throw new Exception();
 	}
 }

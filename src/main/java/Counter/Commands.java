@@ -38,7 +38,7 @@ public enum Commands {
 	EDIT{
 		@Override
 		public void execute() {
-			System.out.println("Done");
+			deck.edit();
 		}
 	},
 	RETURN{

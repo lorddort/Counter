@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Deck {
 	ArrayList<String[]> currentList = new ArrayList<>();
-	String[] deckInfo = new String[4];
+	String[] currentDeckInfo = new String[4];
 	Scanner user = new Scanner(System.in);
 	Classes classes;
 	int wins;
@@ -23,7 +23,7 @@ public class Deck {
 		loses = 0;
 		New newDeck = new New(deckName, classes, wins, loses);
 		
-		newDeck.createNew(currentList, deckInfo);
+		newDeck.createNew(currentList, currentDeckInfo);
 	}
 	
 	public void load() {
@@ -35,7 +35,7 @@ public class Deck {
 		Load load = new Load(deckname, classes);
 		
 		try {
-			load.load();
+			currentDeckInfo = load.load();
 		} catch (Exception e) {
 			System.err.println("I GOT TO CATCH THE EXCEPTION");
 		}
@@ -43,11 +43,11 @@ public class Deck {
 	}
 	
 	public void save() {
-		deckInfo = currentList.get(currentList.size()- 1);
-		int winsTemp = Integer.parseInt(deckInfo[2]);
-		int losesTemp = Integer.parseInt(deckInfo[3]);
-		classes = Classes.getClass(deckInfo[1]);
-		Save newSave = new Save(deckInfo[0], classes, winsTemp, losesTemp);
+		currentDeckInfo = currentList.get(currentList.size()- 1);
+		int winsTemp = Integer.parseInt(currentDeckInfo[2]);
+		int losesTemp = Integer.parseInt(currentDeckInfo[3]);
+		classes = Classes.getClass(currentDeckInfo[1]);
+		Save newSave = new Save(currentDeckInfo[0], classes, winsTemp, losesTemp);
 		
 		try {
 			newSave.saveDeck();
@@ -57,12 +57,12 @@ public class Deck {
 	}
 	
 	public void delete() {
-		System.out.println("Please insert deleting class");
-		String hero = user.nextLine();
-		classes = Classes.getClass(hero);
-		System.out.println("Please insert deleting deckname");
-		String deckName = user.nextLine();
-		Delete delete = new Delete(deckName, classes);
+		//System.out.println("Please insert deleting class");
+		//String hero = user.nextLine();
+		classes = Classes.getClass(currentDeckInfo[1]);
+		//System.out.println("Please insert deleting deckname");
+		//String deckName = user.nextLine();
+		Delete delete = new Delete(currentDeckInfo[0], classes);
 		
 		try {
 			delete.delete();
