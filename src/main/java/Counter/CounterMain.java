@@ -1,6 +1,6 @@
 package main.java.Counter;
 
-public class Main {
+public class CounterMain {
 
 	public static void main(String[] args) {
 		Deck deck = new Deck();

@@ -78,4 +78,18 @@ public class Deck {
 		
 		currentDeckInfo[0] = edit.edit(editName);
 	}
+	
+	public void counting(boolean winLoses) {
+		Count counter = new Count(Integer.parseInt(currentDeckInfo[2]), Integer.parseInt(currentDeckInfo[3]));
+		int getWinLoses = counter.counting(winLoses);
+		if(winLoses) {
+			currentDeckInfo[2] = Integer.toString(getWinLoses);
+		} else {
+			currentDeckInfo[3] = Integer.toString(getWinLoses);
+		}
+	}
+	
+	public String[] getCurrentDeckInfo() {
+		return currentDeckInfo;
+	}
 }
