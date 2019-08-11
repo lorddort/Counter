@@ -6,7 +6,7 @@ public class Main {
 		//frame.Framework();
 		
 		SubFramework sub = new SubFramework("Counter");
-		sub.SubFramework();
+		sub.SubFrame();
 	}
 
 }

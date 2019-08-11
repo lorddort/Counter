@@ -78,7 +78,7 @@ public class SubFramework extends JFrame{
         frame.setVisible(true);
     }
     
-    public void SubFramework() {
+    public void SubFrame() {
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
