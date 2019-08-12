@@ -1,11 +1,13 @@
 package main.java.Counter;
 
+import main.java.Counter.GUI.*;
 import main.java.Counter.Options.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Deck {
+	InputFramework inputFrame = new InputFramework();
 	ArrayList<String[]> currentList = new ArrayList<>();
 	String[] currentDeckInfo = new String[4];
 	Scanner user = new Scanner(System.in);
@@ -15,10 +17,10 @@ public class Deck {
 	
 	public void create() {
 		System.out.println("Please insert class");
-		String hero = user.nextLine();
-		classes = Classes.getClass(hero);
-		System.out.println("Please insert name for your deck.");
-		String deckName = user.nextLine();
+		//String hero = user.nextLine();
+		classes = inputFrame.createAndShowGUIHero();//Classes.getClass(hero);
+		//System.out.println("Please insert name for your deck.");
+		String deckName =inputFrame.createAndShowGUI();
 		wins = 0;
 		loses = 0;
 		New newDeck = new New(deckName, classes, wins, loses);
