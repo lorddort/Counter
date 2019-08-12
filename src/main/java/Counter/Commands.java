@@ -55,13 +55,18 @@ public enum Commands {
 	private static Scanner userInput = new Scanner(System.in);
 	private static boolean RUNNING = true;
 	
-	public static Commands chooseCommand(Deck deck) throws Exception{
+	public static int chooseCommand(Deck deck, String commands) throws Exception{
 		menu.showMenu();
-		String input = userInput.nextLine();
+		String input = commands;
 		for(Commands command:Commands.values()) {
 			if(input.toUpperCase().matches(command.name())) {
 				command.execute();
-				return command;
+				if(menu.getShowMenu() == 2){
+					menu.setShowMenu(1);
+				} else if(menu.getShowMenu() == 1) {
+					menu.setShowMenu(2);
+				}
+				return menu.getShowMenu();
 			}
 		}
 		if(menu.getShowMenu() == 2){

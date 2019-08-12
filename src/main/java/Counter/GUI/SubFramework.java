@@ -1,6 +1,7 @@
 package main.java.Counter.GUI;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -29,7 +30,7 @@ public class SubFramework extends JFrame{
         setResizable(false);
     }
     
-    public void addComponentsToPane(final Container pane) {
+    public void addComponentsToPane(final Container pane, Listener listener) {
         JPanel compsToExperiment = new JPanel();
         compsToExperiment.setLayout(experimentLayout);
         JPanel controls = new JPanel();
@@ -65,20 +66,20 @@ public class SubFramework extends JFrame{
      * this method is invoked from the
      * event dispatch thread.
      */
-    private static void createAndShowGUI() {
+    private static void createAndShowGUI(Listener listener) {
         //Create and set up the window.
     	SubFramework frame = new SubFramework("Counter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //Set up the content pane.
-        frame.addComponentsToPane(frame.getContentPane());
+        frame.addComponentsToPane(frame.getContentPane(), listener);
         
         //Display the window.
         frame.setSize(400, 150);
         frame.setVisible(true);
     }
     
-    public void SubFrame() {
+    public void SubFrame(Listener listener) {
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -99,7 +100,7 @@ public class SubFramework extends JFrame{
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI();
+                createAndShowGUI(listener);
             }
         });
     }

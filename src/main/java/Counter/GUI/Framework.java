@@ -8,18 +8,22 @@ import javax.swing.JFrame;
 import main.java.Counter.*;
 
 public class Framework {
+	public static Listener listen = new Listener();
+	
     public static void addComponentsToPane(Container pane) {
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
 
-        addAButton(Commands.NEW.name(), pane);
-        addAButton(Commands.LOAD.name(), pane);
-        addAButton(Commands.EXIT.name(), pane);
+        addAButton(Commands.NEW.name(), pane, listen);
+        addAButton(Commands.LOAD.name(), pane, listen);
+        addAButton(Commands.EXIT.name(), pane, listen);
     }
 
-    private static void addAButton(String commands, Container container) {
+    private static void addAButton(String commands, Container container, Listener listen) {
         JButton button = new JButton(commands);
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         container.add(button);
+        listen.setListener(commands);
+        button.addActionListener(listen);
     }
 
     /**
@@ -42,14 +46,18 @@ public class Framework {
         frame.setLocation(550, 150);
     }
 
-    public void Framework() {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
+    public void FrameWork(SubFramework sub) {
+    	if (listen.getMenuNumber() == 1) {
+            //Schedule a job for the event-dispatching thread:
+            //creating and showing this application's GUI.
+            javax.swing.SwingUtilities.invokeLater(new Runnable() {
+                public void run() {
+                    createAndShowGUI();
+                }
+            });
+    	} else if (listen.getMenuNumber() == 2) {
+    		sub.SubFrame(listen);
+    	}
     }
 
 }
