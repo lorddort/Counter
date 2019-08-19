@@ -8,21 +8,23 @@ import javax.swing.JFrame;
 import main.java.Counter.*;
 
 public class Framework {
-	public static Listener listen = new Listener();
+	private static JButton button1;
+	private static JButton button2;
+	private static JButton button3;
 	
     public static void addComponentsToPane(Container pane) {
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
-
-        addAButton(Commands.NEW.name(), pane, listen);
-        addAButton(Commands.LOAD.name(), pane, listen);
-        addAButton(Commands.EXIT.name(), pane, listen);
+        
+        addAButton(Commands.NEW.name(), pane);
+        addAButton(Commands.LOAD.name(), pane);
+        addAButton(Commands.EXIT.name(), pane);
     }
 
-    private static void addAButton(String commands, Container container, Listener listen) {
+    private static void addAButton(String commands, Container container) {
         JButton button = new JButton(commands);
+        Listener listen = new Listener(commands);
         button.setAlignmentX(Component.CENTER_ALIGNMENT);
         container.add(button);
-        listen.setListener(commands);
         button.addActionListener(listen);
     }
 
@@ -46,18 +48,14 @@ public class Framework {
         frame.setLocation(550, 150);
     }
 
-    public void FrameWork(SubFramework sub) {
-    	if (listen.getMenuNumber() == 1) {
-            //Schedule a job for the event-dispatching thread:
-            //creating and showing this application's GUI.
-            javax.swing.SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    createAndShowGUI();
-                }
-            });
-    	} else if (listen.getMenuNumber() == 2) {
-    		sub.SubFrame(listen);
-    	}
+    public void FrameWork() {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                createAndShowGUI();
+            }
+        });
     }
 
 }

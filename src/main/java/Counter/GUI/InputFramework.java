@@ -17,11 +17,12 @@ public class InputFramework {
 		return deckName;
 	}
 	
-	public Classes addComponentsToPaneHero() {
-		Classes klass = (Classes) JOptionPane.showInputDialog(null,
+	public String addComponentsToPaneHero() {
+		String klass = (String) JOptionPane.showInputDialog(null,
 				"Bitte eine Klasse eingeben",
 				"Klasse",
-				JOptionPane.OK_OPTION, null, null, null);
+				JOptionPane.OK_OPTION, 
+				null, null, null);
 		return klass;
 		
 	}
@@ -43,13 +44,13 @@ public class InputFramework {
         return deckName;
     }
 	
-	public Classes createAndShowGUIHero() {
+	public String createAndShowGUIHero() {
         //Create and set up the window.
         JFrame frame = new JFrame("Counter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Set up the content pane.
-        Classes klass = addComponentsToPaneHero();
+        String klass = addComponentsToPaneHero();
 
         //Display the window.
         frame.setSize(200, 150);
