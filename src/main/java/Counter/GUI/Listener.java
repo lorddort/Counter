@@ -3,6 +3,8 @@ package main.java.Counter.GUI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+
 import main.java.Counter.Commands;
 import main.java.Counter.Deck;
 
@@ -16,12 +18,10 @@ public class Listener implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		try {
-			Commands.chooseCommand(deck, commands);
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		Commands.chooseCommand(deck, commands);
+		Framework.getFrame().dispose();
+		SubFramework.SubFrame();
+		//SubFramework.getSubFrame().setVisible(true);
 	}
 	
 }

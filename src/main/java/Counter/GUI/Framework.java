@@ -11,8 +11,13 @@ public class Framework {
 	private static JButton button1;
 	private static JButton button2;
 	private static JButton button3;
+	private static JFrame frame;
 	
-    public static void addComponentsToPane(Container pane) {
+    public static JFrame getFrame() {
+		return frame;
+	}
+
+	public static void addComponentsToPane(Container pane) {
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
         
         addAButton(Commands.NEW.name(), pane);
@@ -35,7 +40,7 @@ public class Framework {
      */
     private static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("Counter");
+        frame = new JFrame("Counter");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         //Set up the content pane.
@@ -43,12 +48,12 @@ public class Framework {
 
         //Display the window.
         frame.setSize(200, 150);
-        frame.setVisible(true);
         frame.setResizable(false);
         frame.setLocation(550, 150);
+        frame.setVisible(true);
     }
 
-    public void FrameWork() {
+    public static void FrameWork() {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
         javax.swing.SwingUtilities.invokeLater(new Runnable() {

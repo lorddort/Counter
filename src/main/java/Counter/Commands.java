@@ -1,8 +1,7 @@
 package main.java.Counter;
 
-import java.util.Scanner;
-
-import main.java.Counter.GUI.Main;
+import java.awt.event.WindowEvent;
+import main.java.Counter.GUI.Framework;
 
 public enum Commands {
 	NEW{
@@ -20,70 +19,55 @@ public enum Commands {
 	EXIT{
 		@Override
 		public void execute() {
-			if(RUNNING == true) {
-				RUNNING = false;
-			}
+			Framework.getFrame().dispatchEvent(new WindowEvent(Framework.getFrame(), WindowEvent.WINDOW_CLOSING));
 		}
 	},
 	SAVE{
 		@Override
 		public void execute() {
 			deck.save();
-			Main.setMenu(2);
+			//TODO somehow get to Menu
 		}
 	},
 	DELETE{
 		@Override
 		public void execute() {
 			deck.delete();
+			//TODO somehow get to Menu
 		}
 	},
 	EDIT{
 		@Override
 		public void execute() {
 			deck.edit();
-			Main.setMenu(2);
+			//TODO somehow get to Menu
 		}
 	},
 	RETURN{
 		@Override
 		public void execute() {
-			Main.setMenu(1);
+			//TODO somehow get to Menu
 		}
 	};
 	
-	//private static Menu menu = new Menu();
 	private static Deck deck = new Deck();
-	private static Scanner userInput = new Scanner(System.in);
 	private static boolean RUNNING = true;
 	
-	public static void chooseCommand(Deck deck, String commands) throws Exception{
-		//menu.showMenu();
+	public static void chooseCommand(Deck deck, String commands) {
 		String input = commands;
 		for(Commands command:Commands.values()) {
 			if(input.toUpperCase().matches(command.name())) {
 				command.execute();
-				if(Main.getMenu() == 2){
-					Main.setMenu(1);
-				} else if(Main.getMenu() == 1) {
-					Main.setMenu(2);
-				}
 			}
 		}
-		if(Main.getMenu() == 2){
-			Main.setMenu(1);
-		} else if(Main.getMenu() == 1) {
-			Main.setMenu(2);
-		}
-		throw new Exception("invalid Command");
 	}
 		
 	/**
 	 * Execute the given options
 	 */
 	public abstract void execute();
-
-	public static boolean isRunning() {
-		return RUNNING;
+	
+	public static Deck getDeck() {
+		return deck;
 	}
 }

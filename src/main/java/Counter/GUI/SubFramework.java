@@ -22,8 +22,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 import main.java.Counter.*;
 
 public class SubFramework extends JFrame{
+	private static SubFramework subFrame;
+	
     GridLayout experimentLayout = new GridLayout(0,2);
-    Deck deck = new Deck();
     
     public SubFramework(String name) {
         super(name);
@@ -49,11 +50,11 @@ public class SubFramework extends JFrame{
         counterComps.add(new JButton("+"));
         counterComps.add(new JButton("-"));
         
-        String[] deckInfo = deck.getCurrentDeckInfo();
-        textField.add(new Label("Wins:" + deckInfo[2]));
-        textField.add(new Label("Loses:" + deckInfo[3]));        
-        textField.add(new Label("Deckname:" + deckInfo[0]));
-        textField.add(new Label("Class:" + deckInfo[1]));
+        String[] currentDeckInfo = Commands.getDeck().getCurrentDeckInfo();
+        textField.add(new Label("Wins:" + currentDeckInfo[2]));
+        textField.add(new Label("Loses:" + currentDeckInfo[3]));        
+        textField.add(new Label("Deckname:" + currentDeckInfo[0]));
+        textField.add(new Label("Class:" + currentDeckInfo[1]));
         
         pane.add(counterComps, BorderLayout.NORTH);
         pane.add(textField, BorderLayout.CENTER);
@@ -68,18 +69,22 @@ public class SubFramework extends JFrame{
      */
     private static void createAndShowGUI() {
         //Create and set up the window.
-    	SubFramework frame = new SubFramework("Counter");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    	subFrame = new SubFramework("Counter");
+        subFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //Set up the content pane.
-        frame.addComponentsToPane(frame.getContentPane());
+        subFrame.addComponentsToPane(subFrame.getContentPane());
         
         //Display the window.
-        frame.setSize(400, 150);
-        frame.setVisible(true);
+        subFrame.setSize(400, 150);
+        subFrame.setVisible(true);
     }
     
-    public void SubFrame() {
+    public static SubFramework getSubFrame() {
+		return subFrame;
+	}
+
+	public static void SubFrame() {
         /* Use an appropriate Look and Feel */
         try {
             //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");

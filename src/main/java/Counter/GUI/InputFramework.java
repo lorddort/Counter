@@ -37,9 +37,10 @@ public class InputFramework {
 
         //Display the window.
         frame.setSize(200, 150);
-        frame.setVisible(true);
         frame.setResizable(false);
         frame.setLocation(550, 150);
+        frame.setVisible(true);
+        frame.dispose();
         
         return deckName;
     }
@@ -54,9 +55,10 @@ public class InputFramework {
 
         //Display the window.
         frame.setSize(200, 150);
-        frame.setVisible(true);
         frame.setResizable(false);
         frame.setLocation(550, 150);
+        frame.setVisible(true);
+        frame.dispose();
         
         return klass;
     }
