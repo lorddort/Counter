@@ -14,6 +14,7 @@ public enum Commands {
 		@Override
 		public void execute() {
 			deck.load();
+			//TODO loading screen
 		}
 	},
 	EXIT{

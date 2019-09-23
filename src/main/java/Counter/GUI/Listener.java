@@ -21,7 +21,6 @@ public class Listener implements ActionListener {
 		Commands.chooseCommand(deck, commands);
 		Framework.getFrame().dispose();
 		SubFramework.SubFrame();
-		//SubFramework.getSubFrame().setVisible(true);
 	}
 	
 }

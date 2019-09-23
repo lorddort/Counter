@@ -18,10 +18,10 @@ public class Deck {
 	public void create() {
 		//System.out.println("Please insert class");
 		//String hero = user.nextLine();
-		String klass = inputFrame.createAndShowGUIHero();
+		String klass = inputFrame.addComponentsToPaneHero();
 		Classes classes = Classes.getClass(klass);
 		//System.out.println("Please insert name for your deck.");
-		String deckName = inputFrame.createAndShowGUI();
+		String deckName = inputFrame.addComponentsToPane();
 		wins = 0;
 		loses = 0;
 		New newDeck = new New(deckName, classes, wins, loses);

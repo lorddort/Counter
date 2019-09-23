@@ -26,41 +26,5 @@ public class InputFramework {
 		return klass;
 		
 	}
-	
-	public String createAndShowGUI() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("Counter");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //Set up the content pane.
-        String deckName = addComponentsToPane();
-
-        //Display the window.
-        frame.setSize(200, 150);
-        frame.setResizable(false);
-        frame.setLocation(550, 150);
-        frame.setVisible(true);
-        frame.dispose();
-        
-        return deckName;
-    }
-	
-	public String createAndShowGUIHero() {
-        //Create and set up the window.
-        JFrame frame = new JFrame("Counter");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        //Set up the content pane.
-        String klass = addComponentsToPaneHero();
-
-        //Display the window.
-        frame.setSize(200, 150);
-        frame.setResizable(false);
-        frame.setLocation(550, 150);
-        frame.setVisible(true);
-        frame.dispose();
-        
-        return klass;
-    }
 
 }
