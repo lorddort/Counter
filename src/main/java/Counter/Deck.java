@@ -90,9 +90,18 @@ public class Deck {
 		} else {
 			currentDeckInfo[3] = Integer.toString(getWinLoses);
 		}
+		//System.out.println(currentDeckInfo[2]);
 	}
 	
 	public String[] getCurrentDeckInfo() {
 		return currentDeckInfo;
+	}
+	
+	public String getWins() {
+		return currentDeckInfo[2];
+	}
+	
+	public String getLoses() {
+		return currentDeckInfo[3];
 	}
 }

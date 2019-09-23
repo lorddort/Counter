@@ -14,7 +14,7 @@ public class Framework {
 	private static JFrame frame;
 	
 	private static Deck deck = new Deck();
-	
+
 	/**
 	 * Getter for JFrame
 	 * 

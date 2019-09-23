@@ -1,10 +1,5 @@
 package main.java.Counter.GUI;
 
-import main.java.Counter.Classes;
-import main.java.Counter.GUI.*;
-import java.awt.Container;
-
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class InputFramework {

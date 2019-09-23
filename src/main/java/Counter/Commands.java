@@ -49,6 +49,18 @@ public enum Commands {
 		public void execute() {
 			//TODO somehow get to Menu
 		}
+	},
+	PLUS{
+		@Override
+		public void execute() {
+			deck.counting(true);
+		}
+	},
+	MINUS{
+		@Override
+		public void execute() {
+			deck.counting(false);
+		}
 	};
 	
 	private static Deck deck = new Deck();

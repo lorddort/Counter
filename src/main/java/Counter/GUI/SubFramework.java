@@ -41,20 +41,79 @@ public class SubFramework extends JFrame{
         JPanel textField = new JPanel();
         textField.setLayout(experimentLayout);
         
-        //Add buttons to experiment with Grid Layout
-        compsToExperiment.add(new JButton(Commands.SAVE.name()));
-        compsToExperiment.add(new JButton(Commands.DELETE.name()));
-        compsToExperiment.add(new JButton(Commands.EDIT.name()));
-        compsToExperiment.add(new JButton(Commands.RETURN.name()));
-        
-        counterComps.add(new JButton("+"));
-        counterComps.add(new JButton("-"));
-        
-        String[] currentDeckInfo = Commands.getDeck().getCurrentDeckInfo();
-        textField.add(new Label("Wins:" + currentDeckInfo[2]));
-        textField.add(new Label("Loses:" + currentDeckInfo[3]));        
+        String[] currentDeckInfo = Commands.getDeck().getCurrentDeckInfo();     
+        JLabel plusLabel = new JLabel("Wins:" + currentDeckInfo[2]);
+        JLabel minusLabel = new JLabel("Loses:" + currentDeckInfo[3]);
+    	textField.add(plusLabel);
+    	textField.add(minusLabel);        
         textField.add(new Label("Deckname:" + currentDeckInfo[0]));
         textField.add(new Label("Class:" + currentDeckInfo[1]));
+                
+        JButton save = new JButton(Commands.SAVE.name());
+        save.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), save.getText());
+        		Framework.getFrame().dispose();
+        		SubFramework.SubFrame();
+            }
+        });
+        
+        JButton delete = new JButton(Commands.DELETE.name());
+        delete.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), delete.getText());
+        		Framework.getFrame().dispose();
+        		SubFramework.SubFrame();
+            }
+        });
+        
+        JButton edit = new JButton(Commands.EDIT.name());
+        edit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), edit.getText());
+        		Framework.getFrame().dispose();
+        		SubFramework.SubFrame();
+            }
+        });
+        
+        JButton returnToFrame = new JButton(Commands.RETURN.name());
+        returnToFrame.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), returnToFrame.getText());
+        		Framework.getFrame().dispose();
+        		SubFramework.SubFrame();
+            }
+        });
+        
+        JButton plus = new JButton("+");
+        plus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), Commands.PLUS.name());
+            	plusLabel.setText("Wins:" + Commands.getDeck().getWins());
+            }
+        });
+        
+        JButton minus = new JButton("-");
+        minus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            	Commands.chooseCommand(Commands.getDeck(), Commands.MINUS.name());
+            	minusLabel.setText("Loses:" + Commands.getDeck().getLoses());
+            }
+        });
+        
+        //Add buttons to experiment with Grid Layout
+        compsToExperiment.add(save);
+        compsToExperiment.add(delete);
+        compsToExperiment.add(edit);
+        compsToExperiment.add(returnToFrame);
+        counterComps.add(plus);
+        counterComps.add(minus);
         
         pane.add(counterComps, BorderLayout.NORTH);
         pane.add(textField, BorderLayout.CENTER);
