@@ -13,8 +13,9 @@ public enum Classes {
 	
 	/**
 	 * Get hero form Enum
-	 * @param heroInString
-	 * @return
+	 * 
+	 * @param classInString
+	 * @return classInHero
 	 */
 	public static Classes getClass(String classInString) {
 		Classes classInHeroes = null;

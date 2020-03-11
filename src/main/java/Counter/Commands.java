@@ -14,7 +14,6 @@ public enum Commands {
 		@Override
 		public void execute() {
 			deck.load();
-			//TODO loading screen
 		}
 	},
 	EXIT{
@@ -27,27 +26,18 @@ public enum Commands {
 		@Override
 		public void execute() {
 			deck.save();
-			//TODO somehow get to Menu
 		}
 	},
 	DELETE{
 		@Override
 		public void execute() {
 			deck.delete();
-			//TODO somehow get to Menu
 		}
 	},
 	EDIT{
 		@Override
 		public void execute() {
 			deck.edit();
-			//TODO somehow get to Menu
-		}
-	},
-	RETURN{
-		@Override
-		public void execute() {
-			//TODO somehow get to Menu
 		}
 	},
 	PLUS{
@@ -61,10 +51,13 @@ public enum Commands {
 		public void execute() {
 			deck.counting(false);
 		}
+	},
+	RETURN {
+		@Override
+		public void execute() {}
 	};
 	
 	private static Deck deck = new Deck();
-	private static boolean RUNNING = true;
 	
 	public static void chooseCommand(Deck deck, String commands) {
 		String input = commands;
@@ -84,3 +77,4 @@ public enum Commands {
 		return deck;
 	}
 }
+

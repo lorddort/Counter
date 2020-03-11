@@ -4,7 +4,7 @@ public class Menu {
 	int showMenu = 1;
 	
 	/**
-	 * show Menu
+	 * decide which menu will shown
 	 */
 	public void showMenu() {
 		System.out.println("Choose an option:");
@@ -27,6 +27,7 @@ public class Menu {
 
 	/**
 	 * List all options for menu1
+	 * Maybe not needed
 	 */
 	public void menu1() {
 		System.out.println(Commands.NEW.name() + "\n" + Commands.LOAD.name() + "\n" + Commands.EXIT.name());
@@ -34,6 +35,7 @@ public class Menu {
 	
 	/**
 	 * List all options for menu2
+	 * Maybe not needed
 	 */
 	public void menu2() {
 		System.out.println(Commands.SAVE.name() + "\n" + Commands.DELETE.name() + "\n" + Commands.EDIT.name() + "\n" + Commands.RETURN.name());

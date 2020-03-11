@@ -16,11 +16,8 @@ public class Deck {
 	int loses;
 	
 	public void create() {
-		//System.out.println("Please insert class");
-		//String hero = user.nextLine();
 		String klass = inputFrame.addComponentsToPaneHero();
 		Classes classes = Classes.getClass(klass);
-		//System.out.println("Please insert name for your deck.");
 		String deckName = inputFrame.addComponentsToPane();
 		wins = 0;
 		loses = 0;
@@ -60,11 +57,7 @@ public class Deck {
 	}
 	
 	public void delete() {
-		//System.out.println("Please insert deleting class");
-		//String hero = user.nextLine();
 		classes = Classes.getClass(currentDeckInfo[1]);
-		//System.out.println("Please insert deleting deckname");
-		//String deckName = user.nextLine();
 		Delete delete = new Delete(currentDeckInfo[0], classes);
 		
 		try {
@@ -90,7 +83,6 @@ public class Deck {
 		} else {
 			currentDeckInfo[3] = Integer.toString(getWinLoses);
 		}
-		//System.out.println(currentDeckInfo[2]);
 	}
 	
 	public String[] getCurrentDeckInfo() {

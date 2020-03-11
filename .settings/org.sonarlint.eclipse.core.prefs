@@ -1,0 +1,4 @@
+autoEnabled=true
+eclipse.preferences.version=1
+extraProperties=
+fileExclusions=FILE\:src/main/java/Counter/GUI/InputFramework.java\r\nFILE\:src/main/java/Counter/GUI/Framework.java\r\nFILE\:src/main/java/Counter/GUI/ErrorFrame.java\r\nFILE\:src/main/java/Counter/GUI/Listener.java\r\nFILE\:src/main/java/Counter/GUI/LoadingFrame.java\r\nFILE\:src/main/java/Counter/GUI/Main.java\r\nFILE\:src/main/java/Counter/GUI/SubFramework.java\r\nFILE\:src/main/java/Counter/Options/Count.java\r\nFILE\:src/main/java/Counter/Options/Delete.java\r\nFILE\:src/main/java/Counter/Options/Edit.java\r\nFILE\:src/main/java/Counter/Options/Load.java\r\nFILE\:src/main/java/Counter/Options/New.java\r\nFILE\:src/main/java/Counter/Options/Save.java\r\nFILE\:src/main/java/Counter/Deck.java\r\nFILE\:src/main/java/Counter/Menu.java\r\nFILE\:src/main/java/Counter/CounterMain.java\r\nFILE\:src/main/java/Counter/Commands.java\r\nFILE\:src/main/java/Counter/Classes.java

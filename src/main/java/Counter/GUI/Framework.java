@@ -11,76 +11,74 @@ import javax.swing.JFrame;
 import main.java.Counter.*;
 
 public class Framework {
-	private static JFrame frame;
+    
+    private static JFrame frame;
 	
-	private static Deck deck = new Deck();
-
-	/**
-	 * Getter for JFrame
-	 * 
-	 * @return
-	 */
-    public static JFrame getFrame() {
-		return frame;
-	}
+    private static Deck deck = new Deck();
 
     /**
-     * Adding JButtons
+     * Getter for JFrame
      * 
-     * @param pane Interface where buttons are added
+     * @return frame
      */
-	public static void addComponentsToPane(Container pane) {
+    public static JFrame getFrame() {
+	return frame;
+    }
+
+    /**
+     * Adding Buttons
+     * 
+     * @param pane - Interface where buttons are added
+     */
+    public static void addComponentsToPane(Container pane) {
         pane.setLayout(new BoxLayout(pane, BoxLayout.Y_AXIS));
         
+        /*
+         * Create and perform action for NEW Button
+         */
         JButton create = new JButton(Commands.NEW.name());
         create.setAlignmentX(Component.CENTER_ALIGNMENT);
         create.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Commands.chooseCommand(deck, create.getText());
-        		Framework.getFrame().dispose();
-        		SubFramework.SubFrame();
+        	Framework.getFrame().dispose();
+        	SubFramework.SubFrame();
             }
         });
         
+        /*
+         * Create and perform action for LOAD Button
+         */
         JButton load = new JButton(Commands.LOAD.name());
         load.setAlignmentX(Component.CENTER_ALIGNMENT);
         load.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Commands.chooseCommand(deck, load.getText());
-        		Framework.getFrame().dispose();
-        		SubFramework.SubFrame();
+        	Framework.getFrame().dispose();
+        	SubFramework.SubFrame();
             }
         });
         
+        /*
+         * Create and perform action for EXIT Button
+         */
         JButton exit = new JButton(Commands.EXIT.name());
         exit.setAlignmentX(Component.CENTER_ALIGNMENT);
         exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
             	Commands.chooseCommand(deck, exit.getText());
-        		Framework.getFrame().dispose();
-        		SubFramework.SubFrame();
+        	Framework.getFrame().dispose();
+        	SubFramework.SubFrame();
             }
         });
         
         pane.add(create);
         pane.add(load);
         pane.add(exit);
-        
-        //addAButton(Commands.NEW.name(), pane);
-        //addAButton(Commands.LOAD.name(), pane);
-        //addAButton(Commands.EXIT.name(), pane);
     }
-
-    /*private static void addAButton(String commands, Container container) {
-        JButton button = new JButton(commands);
-        Listener listen = new Listener(commands);
-        button.setAlignmentX(Component.CENTER_ALIGNMENT);
-        container.add(button);
-        button.addActionListener(listen);
-    }*/
 
     /**
      * Create the GUI and show it.  For thread safety,
@@ -102,6 +100,9 @@ public class Framework {
         frame.setVisible(true);
     }
 
+    /**
+     * Run the Framework. Necessary the open the window.
+     */
     public static void FrameWork() {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.

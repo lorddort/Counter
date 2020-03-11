@@ -1,0 +1,12 @@
+Problems
+
+ToDo:
+-Commets
+-ListDialog for LOAD
+-EDIT should editable the classname, deckname, wins and loses (EDIT not implemented yet)
+
+-Exceptions for InputFrameworks (class InputFramework)
+
+-with duplicate name it will delete the saved progression and the current/new create progression.
+Solution: Throw Exception while creating a new deck with same name
+	  Throw warning message that it will delete every deck with the same name
