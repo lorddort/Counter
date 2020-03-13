@@ -112,6 +112,8 @@ public class SubFramework extends JFrame {
 		    metaField.add(minusText);
 		    metaField.add(nameText);
 		    metaField.add(classText);
+		    revalidate();
+		    repaint();
 		    edit.setText("DONE");
 		} else {
 		    plusLabel.setText(plusText.getText());
@@ -126,6 +128,8 @@ public class SubFramework extends JFrame {
 		    metaField.add(minusLabel);
 		    metaField.add(nameLabel);
 		    metaField.add(classLabel);
+		    revalidate();
+		    repaint();
 		    edit.setText("EDIT");
 		}
 	    }
@@ -152,7 +156,8 @@ public class SubFramework extends JFrame {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		int winsValue = Integer.parseInt(plusLabel.getText());
-		plusLabel.setText(Integer.toString(winsValue++));
+		winsValue++;
+		plusLabel.setText(Integer.toString(winsValue));
 	    }
 	});
 
@@ -164,7 +169,8 @@ public class SubFramework extends JFrame {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		int losesValue = Integer.parseInt(minusLabel.getText());
-		minusLabel.setText(Integer.toString(losesValue++));
+		losesValue++;
+		minusLabel.setText(Integer.toString(losesValue));
 	    }
 	});
 
